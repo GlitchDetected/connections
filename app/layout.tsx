@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mice of men connection game",
+  title: "connections",
   description: "blah blah blah",
 };
 

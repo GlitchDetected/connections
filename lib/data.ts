@@ -1,5 +1,15 @@
 export const categories = [
   {
+    category: "Test",
+    words: [
+      { word: "beast", definition: "in a very unhappy or annoyed way" },
+      { word: "best", definition: "in a way that shows you are not willing to do something" },
+      { word: "bet", definition: "in a way that shows you are unhappy, disappointed, or without hope" },
+      { word: "be", definition: "in a way that sounds slightly sad" },
+      { word: "Apprehensive", definition: "feeling worried about something" },
+    ]
+  },
+  {
     category: "Emotions/Feelings",
     words: [
       { word: "Morosely", definition: "in a very unhappy or annoyed way" },
