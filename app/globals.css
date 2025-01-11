@@ -14,8 +14,115 @@
   }
 }
 
+/* styles/globals.css */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* stuff */
+
+.connection-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Title of the game */
+.title {
+  margin-bottom: 20px;
+}
+
+/* Deselect All Button */
+.deselect-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Grid for the words */
+.words-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Row of words */
+.word-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Word button style */
+.word-button {
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #141313;
+  width: 100px; /* Fixed button width */
+  height: 40px; /* Fixed button height */
+  border-radius: 5px;
+}
+
+/* Word button selected state */
+.word-button.selected {
+  opacity: 0.5;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Disabled submit button */
+.submit-button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Selected Words Section */
+.selected-words-container {
+  margin-top: 30px;
+}
+
+.selected-list {
+  list-style-type: none;
+  padding: 0;
 }
