@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { categories } from "@/lib/data";
 
+export const runtime = 'edge'
+
 const ConnectionGame = () => {
   const [selectedPairs, setSelectedPairs] = useState<{ word: string; category: string }[]>([]);
   const [feedback, setFeedback] = useState<string>("");
