@@ -2,19 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #010a1a;
+    --foreground: #010a1a;
   }
 }
 
-/* styles/globals.css */
 ul {
   list-style-type: none;
   padding: 0;
@@ -26,20 +20,11 @@ li {
   border: 1px solid #ccc;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* stuff */
 
 .connection-game-container {
   display: flex;
@@ -49,25 +34,35 @@ body {
   min-height: 100vh;
   text-align: center;
   padding: 20px;
+  color: white;
 }
 
-/* Title of the game */
 .title {
   margin-bottom: 20px;
+  color: white;
 }
 
-/* Deselect All Button */
-.deselect-button {
+.button-container {
+  display: flex;
+  gap: 10px; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.button {
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
   background-color: #007bff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   margin-bottom: 20px;
+  border-radius: 50px;
 }
 
-/* Grid for the words */
+.button.disabled {
+  background-color: #696565;
+  cursor: not-allowed;
+}
+
 .words-grid {
   display: flex;
   flex-direction: column;
@@ -75,7 +70,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Row of words */
 .word-row {
   display: flex;
   justify-content: center;
@@ -83,46 +77,17 @@ body {
   margin-bottom: 10px;
 }
 
-/* Word button style */
-.word-button {
-  padding: 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background-color: #141313;
-  width: 100px; /* Fixed button width */
-  height: 40px; /* Fixed button height */
-  border-radius: 5px;
-}
-
-/* Word button selected state */
-.word-button.selected {
+.button.selected {
   opacity: 0.5;
 }
 
-/* Submit Button */
-.submit-button {
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #007bff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-/* Disabled submit button */
-.submit-button.disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Selected Words Section */
 .selected-words-container {
   margin-top: 30px;
+  color: white;
 }
 
 .selected-list {
   list-style-type: none;
   padding: 0;
+  color: white;
 }

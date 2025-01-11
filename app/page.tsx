@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { categories } from "@/lib/data";
+import { motion } from "motion/react"
 
 export const runtime = "edge";
 
@@ -40,33 +41,27 @@ const homepage = () => {
 
   const handleSubmit = () => {
     let isCorrect = true;
-  
-    // Extract the category for each selected word
     const selectedCategories = selectedPairs.map((pair) => pair.category);
-  
-    // Check if all selected words belong to the same category
     const uniqueCategories = [...new Set(selectedCategories)];
     if (uniqueCategories.length !== 1) {
-      isCorrect = false; // More than one category detected
+      isCorrect = false; 
     } else {
-      // Validate the selected words against the correct words for this single category
       const selectedCategory = uniqueCategories[0];
       const correctCategory = categories.find((cat) => cat.category === selectedCategory);
   
       if (!correctCategory) {
-        isCorrect = false; // Invalid category
+        isCorrect = false;
       } else {
         const correctWords = correctCategory.words.map((w) => w.word);
         const selectedWords = selectedPairs.map((pair) => pair.word);
   
-        // Ensure all selected words belong to the correct category
         if (!selectedWords.every((word) => correctWords.includes(word))) {
           isCorrect = false;
         }
       }
     }
-  
-    setFeedback(isCorrect ? "✅ All correct!" : "❌ Some answers are incorrect.");
+
+    setFeedback(isCorrect ? "✅ All correct" : "❌ Some answers are wrong");
   };
   
 
@@ -85,6 +80,13 @@ const homepage = () => {
   return (
     <div className="connection-game-container">
       <h1 className="title">Connections Game</h1>
+
+      <motion.div
+                      initial={{ opacity: 0, y: 100 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5}}
+        >
+        
       <div className="words-grid">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="word-row">
@@ -96,7 +98,7 @@ const homepage = () => {
                 <button
                   key={idx}
                   onClick={() => handleWordClick(word, category || "")}
-                  className={`word-button ${
+                  className={`button ${
                     selectedPairs.some((pair) => pair.word === word) ? "selected" : ""
                   }`}
                 >
@@ -107,16 +109,22 @@ const homepage = () => {
           </div>
         ))}
       </div>
+
+      <div className="button-container">
       <button
         onClick={handleSubmit}
-        className={`submit-button ${isSubmitDisabled ? "disabled" : ""}`}
+        className={`button ${isSubmitDisabled ? "disabled" : ""}`}
         disabled={isSubmitDisabled}
       >
         Submit
       </button>
-      <button onClick={handleDeselectAll} className="deselect-button">
+      <button onClick={handleDeselectAll} className="button">
         Deselect All
       </button>
+      </div>
+
+      </motion.div>
+
       <div>
         <h2>{feedback}</h2>
       </div>
