@@ -2,6 +2,7 @@
 
 - [ ] Fix the buggy ui
   - [ ] hm
+- [ ] Make the desktop client
 
 ### In Progress
 
